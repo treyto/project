@@ -25,16 +25,19 @@ protected function get_menu(){
             exit(mysql_error());
             }
         $row=array();
-        echo'<div id="menu">';
+        echo'<div class="navigation">';
         $count = mysql_num_rows($result);
+        echo "<ul>";
+            echo "<li><a href='index.php'>Главная</a></li>";
         for($i = 0;$i<$count; $i++){
             $row=mysql_fetch_array ($result,MYSQL_ASSOC);
             $a=$row["name_cat"];
             $b=$row["id_category"];
-        	printf("<div id='hdl'>
-            <a href='?option=category&id_cat=%s' class='hl'>%s</a>
-            </div>",$b,$a);
+            printf("
+            <li><a href='?option=category&id_cat=%s'>%s</a></li>
+            ",$b,$a);
         }
+        echo "</ul>";
         echo"</div>";
         
     }

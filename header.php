@@ -1,18 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta content="true" name="mssmarttagspreventparsing" />
-        <meta http-equiv="imagetoolbar" content="no" />
-        <title>BlogAir Template</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-        </head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="Атняшев Антон" />
+<meta name="robots" content="all" />
+<LINK rel="stylesheet" media="screen" type="text/css" title="Style" href="css/style.css">
+<link rel="shortcut icon" href="/img/icon.png" type="image/png">
 
+<title> Развлекательный портал WTF</title>
+</head>
 <body>
-	<!-- Wrap Div -->
-	<div id="wrap">
-
-		<!-- Header -->
-		<div id="hdr">
-</div>
-</div>
+<div id="status-bar"></div>

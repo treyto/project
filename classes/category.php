@@ -13,7 +13,7 @@ class category extends ACore{
                 else{
                        $query="SELECT id,title,description,date,img_src 
                        FROM articles 
-                       WHERE  cat='id_cat' 
+                       WHERE  $id_cat 
                        ORDER BY date DESC";
         $result=mysql_query($query);
         if(!$result){
@@ -27,16 +27,15 @@ class category extends ACore{
         $row=mysql_fetch_array($result,MYSQL_ASSOC);
         printf("<div style ='margin;10px;border-bottom:2 px solid #000'>
         <p style='font-size:22px'>%s</p>
-        <p>%s</p>
         <p>img style ='margin-right:5px' width='250px' align='left' src='%s'>%s</p>
         <p style='color:red'><a href='&option=view&id_text=%s'>Читать статью</a></p>
         </div>
-        ",$row['title'],$row['date'],$row['img_src'],$row['description'],$row['id']);
+        ",$row['title'],$row['img_src'],$row['description'],$row['id']);
         }
         }
         
 else{
-           echo "В данной категории нет статей увы )))))))) ";
+           echo "В данной категории нет статей увы ))) ";
         }
     }
 }
