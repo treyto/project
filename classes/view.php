@@ -3,7 +3,7 @@
 class view extends ACore{
     
 public function get_content(){
-    echo '<div id="content">';
+    echo '<div class="post">';
         if(!$_GET['id_text']){
             echo 'не играйся со строкой';
         }

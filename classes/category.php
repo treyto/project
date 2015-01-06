@@ -20,16 +20,18 @@ class category extends ACore{
             exit(mysql_error());
         }
        if(mysql_num_rows($result)>0){
+        
         $row=array();
-        for ($i=0;$i< mysql_num_rows($result);$i++){
-            $row=mysql_fetch_array($result,MYSQL_ASSOC);
-            printf("<div style ='margin;10px;border-bottom:2 px solid #000'>
-            <p style='font-size:22px'>%s</p>
-            <p>%s</p>
-            <p>img style ='margin-right:5px' width='250px' align='left' src='%s'>%s</p>
-            <p style='color:red'><a href='&option=view&id_text=%s'>Читать статью</a></p>
-            </div>
-            ",$row['title'],$row['date'],$row['img_src'],$row['description'],$row['id']);
+        $count= mysql_num_rows($result);
+        for ($i=0;$i<$count;$i++){
+        $row=mysql_fetch_array($result,MYSQL_ASSOC);
+        printf("<div style ='margin;10px;border-bottom:2 px solid #000'>
+        <p style='font-size:22px'>%s</p>
+        <p>%s</p>
+        <p>img style ='margin-right:5px' width='250px' align='left' src='%s'>%s</p>
+        <p style='color:red'><a href='&option=view&id_text=%s'>Читать статью</a></p>
+        </div>
+        ",$row['title'],$row['date'],$row['img_src'],$row['description'],$row['id']);
         }
         }
         
@@ -40,7 +42,7 @@ else{
 }
     
         echo '</div>
-        </div>';
+                    </div>';
 }
 }
 

@@ -25,26 +25,29 @@ protected function get_menu(){
             exit(mysql_error());
             }
         $row=array();
-        echo'<div id="page-wrapper">';
-        for($i = 0;$i< mysql_num_rows($result); $i++){
+        echo'<div id="menu">';
+        $count = mysql_num_rows($result);
+        for($i = 0;$i<$count; $i++){
             $row=mysql_fetch_array ($result,MYSQL_ASSOC);
-            printf("<div class='navigation'>
-        <ul>
-        <li><a href='?option=category&id_cat=%s'>%s</a></li>
-        </ul>
-        </div>",$row['id_category'],$row['name_cat']);
+            $a=$row["name_cat"];
+            $b=$row["id_category"];
+        	printf("<div id='hdl'>
+            <a href='?option=category&id_cat=%s' class='hl'>%s</a>
+            </div>",$b,$a);
         }
         echo"</div>";
         
     }
+
  
+
 public function get_body(){
         $this->get_header();
         $this->get_menu();
         $this->get_content();
        
     }
-    
+    abstract function get_content();
 }
 
 

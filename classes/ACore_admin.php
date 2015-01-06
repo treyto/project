@@ -1,15 +1,15 @@
 <?php
-abstract class ACore_admin{
+abstract class ACore_Admin{
     
     protected $db;
     
     public function __construct(){
         $this->db=mysql_connect(HOST,USER,PASS);
         if(!$this->db){
-            exit ("Ó¯Ë·Í‡ Ò ¡ƒ Û‚˚ ÌË˜Â„Ó ÌÂ ÔÓÎÛ˜ËÚ¸Òˇ ".mysql_error());
+            exit ("–æ—à–∏–±–∫–∞ —Å –ë–î —É–≤—ã –Ω–∏—á–µ–≥–æ –Ω–µ –ø–æ–ª—É—á–∏—Ç—å—Å—è ".mysql_error());
         }
         if(!mysql_select_db(DB,$this->db)){
-            exit ("ÕÂÚ Ú‡ÍÓÈ ¡‰ ".mysql_error());
+            exit ("–ù–µ—Ç —Ç–∞–∫–æ–π –ë–¥ ".mysql_error());
         }
         mysql_query("SET NAMES 'UTF8'");
     }
@@ -20,15 +20,17 @@ abstract class ACore_admin{
     
 protected function get_menu(){
 
-        echo'<div id="page-wrapper">';
+      echo'<div id="menu">';
+      
+      echo "<div id='hdl'>
+      <a href='?option=edit_articles'>–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ —Å—Ç–∞—Ç—å–∏</a>
+      </div>";
+      
+      echo "<div id='hdl'>
+      <a href='?option=edit_menu'>–†–µ–¥–∞–∫—Ç–∏—Ä–æ–≤–∞–Ω–∏–µ –º–µ–Ω—é</a>
+      </div>";
 
-          echo " <div class='navigation'>
-        <ul>
-        <li><a href='?option=category&id_cat=%s'>%s</a></li>
-        </ul>
-        </div>",$row['id_category'],$row['name_cat']);
-        }
-        echo"</div>";
+      echo "</div>";
         
     }
 
